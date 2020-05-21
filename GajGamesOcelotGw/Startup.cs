@@ -13,6 +13,9 @@ using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
+using Consul;
+using Ocelot.Provider.Consul;
+
 namespace GajGamesOcelotGw
 {
     public class Startup
@@ -27,14 +30,15 @@ namespace GajGamesOcelotGw
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
-            services.AddOcelot(Configuration);
+
+            //services.AddOcelot(Configuration)
+            //        .AddConsul();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            await app.UseOcelot();
+            //await app.UseOcelot();
         }
     }
 }

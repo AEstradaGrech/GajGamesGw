@@ -3,20 +3,18 @@
     {
       "DownstreamPathTemplate": "/api/v1/Images/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5000
-        }
-      ],
+      "ServiceName": "gaj-imgs",
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST" ]
-      
+
     }
   ],
   "GlobalConfiguration": {
-    "RequestIdKey": "OcRequestId",
-    "AdministrationPath": "/administration"
+    "ServiceDiscoveryProvider": {
+      "Host": "consul",
+      "Port": 8500,
+      "Type": "Consul"
+    }
   },
   "Logging": {
     "LogLevel": {
@@ -24,4 +22,4 @@
     }
   },
   "AllowedHosts": "*"
-}
+ }
