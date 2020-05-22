@@ -12,9 +12,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-
 using Consul;
 using Ocelot.Provider.Consul;
+using MMLib.SwaggerForOcelot;
 
 namespace GajGamesOcelotGw
 {
@@ -31,14 +31,17 @@ namespace GajGamesOcelotGw
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.AddOcelot(Configuration)
-            //        .AddConsul();
+            services.AddOcelot()
+                    .AddConsul();
+
+            services.AddSwaggerForOcelot(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //await app.UseOcelot();
+            app.UseOcelot().Wait();
+            app.UseSwaggerForOcelotUI(Configuration);
         }
     }
 }

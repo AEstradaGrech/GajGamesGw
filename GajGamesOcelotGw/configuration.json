@@ -3,18 +3,32 @@
     {
       "DownstreamPathTemplate": "/api/v1/Images/{everything}",
       "DownstreamScheme": "http",
-      "ServiceName": "gaj-imgs",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "gaj-imgs",
+          "Port": 80
+        }
+      ],
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
-
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "gaj-imgs"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "gaj-imgs", //used to pair with the ReRoute configuration
+      "Config": [
+        {
+          "Name": "TPS IMGs", //displayed in the combobox.
+          "Version": "v1",
+          "Url": "http://gaj-imgs:5100/swagger/v1/swagger.json" //address for the microservice documentation
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
-    "ServiceDiscoveryProvider": {
-      "Host": "consul",
-      "Port": 8500,
-      "Type": "Consul"
-    }
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
   },
   "Logging": {
     "LogLevel": {
@@ -22,4 +36,4 @@
     }
   },
   "AllowedHosts": "*"
- }
+}

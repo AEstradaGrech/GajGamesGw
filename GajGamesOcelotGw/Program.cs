@@ -30,19 +30,13 @@ namespace GajGamesOcelotGw
                             true, true)
                         .AddJsonFile("configuration.json")
                         .AddEnvironmentVariables();
-                })
-                .ConfigureServices(s => {
-                    s.AddOcelot().AddConsul();
-                })
+                })                
                 .ConfigureLogging((hostingContext, logging) =>
                 {
                     logging.AddConsole();
                 })
                 .UseIISIntegration()
-                .Configure(app =>
-                {
-                    app.UseOcelot().Wait();
-                })
+                .UseStartup<Startup>()
                 .Build()
                 .Run();
         }
