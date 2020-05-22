@@ -3,12 +3,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/Images/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "gaj-imgs",
-          "Port": 80
-        }
-      ],
+      "ServiceName": "gaj-imgs",
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST" ],
       "SwaggerKey": "gaj-imgs"
@@ -21,14 +16,17 @@
         {
           "Name": "TPS IMGs", //displayed in the combobox.
           "Version": "v1",
-          "Url": "http://gaj-imgs:5100/swagger/v1/swagger.json" //address for the microservice documentation
+          "Url": "http://gaj-imgs:80/swagger/v1/swagger.json" //address for the microservice documentation
         }
       ]
     }
   ],
   "GlobalConfiguration": {
-    "RequestIdKey": "OcRequestId",
-    "AdministrationPath": "/administration"
+    "ServiceDiscoveryProvider": {
+      "Host": "consul",
+      "Port": 8500,
+      "Type": "Consul"
+    }
   },
   "Logging": {
     "LogLevel": {
