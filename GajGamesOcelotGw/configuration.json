@@ -7,6 +7,30 @@
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST" ],
       "SwaggerKey": "gaj-imgs"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Users/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-ids4",
+      "UpstreamPathTemplate": "/api/v1/Users/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "gaj-ids4"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Auth/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-ids4",
+      "UpstreamPathTemplate": "/api/v1/Auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "gaj-ids4"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-ids4",
+      "UpstreamPathTemplate": "/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "gaj-ids4"
     }
   ],
   "SwaggerEndPoints": [
