@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-imgs",
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ], // No OPTIONS == CORS preflight req headers error
       "SwaggerKey": "gaj-imgs"
     },
     {
@@ -13,7 +13,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-ids4",
       "UpstreamPathTemplate": "/api/v1/Users/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
       "SwaggerKey": "gaj-ids4"
     },
     {
@@ -21,7 +21,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-ids4",
       "UpstreamPathTemplate": "/api/v1/Auth/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
       "SwaggerKey": "gaj-ids4"
     },
     {
@@ -29,7 +29,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-ids4",
       "UpstreamPathTemplate": "/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
       "SwaggerKey": "gaj-ids4"
     }
   ],

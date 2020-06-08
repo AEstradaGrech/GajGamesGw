@@ -31,6 +31,16 @@ namespace GajGamesOcelotGw
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.SetIsOriginAllowed((host) => true)
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod()
+                                      .AllowAnyOrigin()                                      
+                                      .WithExposedHeaders("Authorization"));
+            });
+
             services.AddOcelot()
                     .AddConsul();
 
