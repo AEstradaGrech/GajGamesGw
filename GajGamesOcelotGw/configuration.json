@@ -31,6 +31,22 @@
       "UpstreamPathTemplate": "/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
       "SwaggerKey": "gaj-ids4"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/rtr/Images/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-router",
+      "UpstreamPathTemplate": "/api/v1/rtr/Images/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "SwaggerKey": "gaj-router"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/rtr/Users/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-router",
+      "UpstreamPathTemplate": "/api/v1/rtr/Users/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "SwaggerKey": "gaj-router"
     }
   ],
   "SwaggerEndPoints": [
