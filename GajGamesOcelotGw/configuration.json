@@ -47,7 +47,14 @@
       "UpstreamPathTemplate": "/api/v1/rtr/Users/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
       "SwaggerKey": "gaj-router"
-    }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/rtr/Store/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "gaj-router",
+      "UpstreamPathTemplate": "/api/v1/rtr/Store/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ]
+    }    
   ],
   "SwaggerEndPoints": [
     {
