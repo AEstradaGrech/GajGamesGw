@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-imgs",
       "UpstreamPathTemplate": "/api/v1/Images/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ], // No OPTIONS == CORS preflight req headers error
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "UPDATE", "OPTIONS" ], // No OPTIONS == CORS preflight req headers error
       "SwaggerKey": "gaj-imgs"
     },
     {
@@ -13,7 +13,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-ids4",
       "UpstreamPathTemplate": "/api/v1/Users/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "UPDATE", "OPTIONS" ],
       "SwaggerKey": "gaj-ids4"
     },
     {
@@ -37,7 +37,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-router",
       "UpstreamPathTemplate": "/api/v1/rtr/Images/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "UPDATE", "OPTIONS" ],
       "SwaggerKey": "gaj-router"
     },
     {
@@ -45,7 +45,7 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-router",
       "UpstreamPathTemplate": "/api/v1/rtr/Users/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "UPDATE", "OPTIONS" ],
       "SwaggerKey": "gaj-router"
     },
     {
@@ -53,21 +53,9 @@
       "DownstreamScheme": "http",
       "ServiceName": "gaj-router",
       "UpstreamPathTemplate": "/api/v1/rtr/Store/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "UPDATE", "OPTIONS" ]
     }    
-  ],
-  "SwaggerEndPoints": [
-    {
-      "Key": "gaj-imgs", //used to pair with the ReRoute configuration
-      "Config": [
-        {
-          "Name": "TPS IMGs", //displayed in the combobox.
-          "Version": "v1",
-          "Url": "http://gaj-imgs:80/swagger/v1/swagger.json" //address for the microservice documentation
-        }
-      ]
-    }
-  ],
+  ],  
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
       "Host": "consul",

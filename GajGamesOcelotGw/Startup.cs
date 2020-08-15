@@ -44,14 +44,14 @@ namespace GajGamesOcelotGw
             services.AddOcelot()
                     .AddConsul();
 
-            services.AddSwaggerForOcelot(Configuration);
+           // services.AddSwaggerForOcelot(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseOcelot().Wait();
-            app.UseSwaggerForOcelotUI(Configuration);
+         //   app.UseSwaggerForOcelotUI(Configuration);
         }
     }
 }
