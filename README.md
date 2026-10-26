@@ -1,2 +1,2 @@
 # GajGamesGw
-Entrypoint to the Angular app backend services. It will handle authentication and ReRouting to the requested service.
+(2020, early career) Ocelot API gateway: authentication and routing for a microservices backend.
